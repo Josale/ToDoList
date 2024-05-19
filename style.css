@@ -8,6 +8,10 @@ body {
 	background-color: #1e1e1e;
 }
 
+.hide {
+	display: none;
+}
+
 .container {
 	width: 650px;
 	margin: 0 auto;
@@ -62,13 +66,20 @@ body {
 	& > .todo-items {
 		display: flex;
 		flex-direction: column;
-		gap: 15px;
 		margin-top: 20px;
 		& > .input-checkbox {
 			display: none;
 		}
 		& > label {
+			padding: 10px 0px;
 			color: white;
+			transition-duration: 0.1s;
+			&:hover {
+				margin-left: 10px;
+				border-radius: 9px;
+				background-color: #181818;
+				transition-duration: 0.4s;
+			}
 			&::before {
 				content: '';
 				display: inline-block;
@@ -79,6 +90,7 @@ body {
 				background: transparent;
 				vertical-align: middle;
 				margin-right: 10px;
+				margin-left: 2px;
 			}
 		}
 	}
@@ -117,4 +129,15 @@ hr {
 	margin-top: 10px;
 	opacity: 30%;
 	width: 100%;
+}
+
+.todo-description {
+	color: #5B5B5B;
+	font-size: 13px;
+	opacity: 80%;
+	text-align: center;
+}
+
+input:focus {
+	outline: none;
 }

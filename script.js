@@ -8,6 +8,7 @@ function handleKeyPress(event) {
 			let inputInfo = inputField.value;
 			inputField.value = '';		
 			console.log(inputInfo)
+			hideDescription(event)
 			addToDoItem(inputInfo)
 			itemsCounter(counter)
 	}
@@ -56,5 +57,30 @@ function itemsCounter(counter) {
 }
 
 itemsCounter(counter)
+
+const description = document.querySelector('.todo-description');
+
+function hideDescription(event) {
+	if(event.key == 'Enter') {
+		description.classList.add('hide');
+	}
+}
+
+function buttonAdd() {
+	const button = document.getElementById('addToDo');
+	const inputField = document.getElementById('newToDo');
+	button.addEventListener('click', () => {
+		if(inputField.value.trim() !== '') {
+			let inputInfo = inputField.value;
+			description.classList.add('hide');
+			addToDoItem(inputInfo);
+			itemsCounter(counter)
+		} else {
+			console.log('Type something')
+		}
+	})
+}
+
+buttonAdd()
 
 // some changes
