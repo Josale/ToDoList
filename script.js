@@ -56,3 +56,5 @@ function itemsCounter(counter) {
 }
 
 itemsCounter(counter)
+
+// some changes
