@@ -102,3 +102,8 @@ function buttonAdd() {
 }
 
 buttonAdd()
+
+// function addCompleted() {
+// 	const checkbox = document.querySelector('');
+// 	if(input[type='checkbox']:checked)
+// }
