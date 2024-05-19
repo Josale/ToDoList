@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<title>ToDo List</title>
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="todo-input">
+				<input id="newToDo" type="text" placeholder="Search for or add ToDo" maxlength='30' onkeypress="handleKeyPress(event)">
+				<button id="addToDo">+</button>
+			</div>
+			<div class="todo-list">
+				<div class="todo-info">
+					<h2>ToDo</h2>
+					<!-- <p class='items-count'>4 items</p> -->
+				</div>
+				<div class="todo-items">
+					<!-- <input type="checkbox" id='input-checkbox1' class='input-checkbox'>
+					<label class="input-label" for='input-checkbox1'>fdfdfd</label> -->
+				</div>
+			</div>
+			<div class="completed-list">
+				<div class="todo-info">
+					<h2>Completed</h2>
+					<!-- <p class='items-count'>4 items</p> -->
+				</div>
+				<hr>
+				<div class="todo-items">
+					<!-- <input type="checkbox" id='input-checkbox1' class='input-checkbox'>
+					<label class="input-label" for='input-checkbox1'>fdfdfd</label> -->
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
