@@ -20,7 +20,7 @@ body {
 .todo-input {
 	position: relative;
 	display: flex;
-	margin-top: 250px;
+	margin-top: 200px;
 	& > input {
 		background-color: #0f0e0d;
 		&::placeholder {
@@ -138,6 +138,28 @@ hr {
 	text-align: center;
 }
 
-input:focus {
+input:focus, button:focus {
 	outline: none;
+}
+
+label {
+	display: flex;
+	align-items: center;
+	&:hover img {
+		opacity: 80%;
+		margin-right: 10px;
+		cursor: pointer;
+		transition: 0.3s ease;
+	}
+}
+
+.trash {
+	opacity: 0%;
+	height: 20px;
+	vertical-align: middle;
+	margin-right: 35px;
+	margin-left: auto;
+	&:hover {
+		opacity: 100%;
+	}
 }
