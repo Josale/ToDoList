@@ -20,7 +20,7 @@ body {
 .todo-input {
 	position: relative;
 	display: flex;
-	margin-top: 200px;
+	margin-top: 120px;
 	& > input {
 		background-color: #0f0e0d;
 		&::placeholder {
@@ -94,10 +94,10 @@ body {
 			}
 		}
 		& > .todo-description {
-				color: #5B5B5B;
-				font-size: 13px;
-				opacity: 80%;
-				text-align: center;
+			color: #5b5b5b;
+			font-size: 13px;
+			opacity: 80%;
+			text-align: center;
 		}
 		& > label {
 			display: flex;
@@ -131,7 +131,8 @@ input[type='checkbox']:checked + label::before {
 	transition: 0.1s ease-in-out;
 }
 
-.todo-info {
+.todo-info,
+.todo-info-completed {
 	display: flex;
 	align-items: center;
 	gap: 25px;
@@ -157,6 +158,88 @@ hr {
 	width: 100%;
 }
 
-input:focus, button:focus {
+input:focus,
+button:focus {
 	outline: none;
+}
+
+.completed {
+	display: none;
+}
+
+.todo-items-completed {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	& > .input-checkbox {
+		display: none;
+	}
+	& > label {
+		padding: 10px 0px;
+		color: white;
+		transition-duration: 0.1s;
+		&:hover {
+			margin-left: 10px;
+			border-radius: 9px;
+			background-color: #222121;
+			transition-duration: 0.4s;
+		}
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border: 2px solid white;
+			border-radius: 15px;
+			background: transparent;
+			vertical-align: middle;
+			margin-right: 10px;
+			margin-left: 2px;
+		}
+	}
+	& > .todo-description {
+		color: #5b5b5b;
+		font-size: 13px;
+		opacity: 80%;
+		text-align: center;
+	}
+	& > label {
+		display: flex;
+		align-items: center;
+		&:hover img {
+			opacity: 80%;
+			margin-right: 10px;
+			cursor: pointer;
+			transition: 0.3s ease;
+		}
+		& > .trash {
+			opacity: 0%;
+			height: 20px;
+			vertical-align: middle;
+			margin-right: 35px;
+			margin-left: auto;
+			&:hover {
+				opacity: 100%;
+			}
+		}
+	}
+}
+
+.todo-items,
+.todo-items-completed {
+	max-height: 220px;
+	overflow-y: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.todo-items::-webkit-scrollbar,
+.todo-items-completed::-webkit-scrollbar {
+	display: none;
+}
+.todo-description-completed {
+	color: #5b5b5b;
+	font-size: 13px;
+	opacity: 80%;
+	text-align: center;
 }
