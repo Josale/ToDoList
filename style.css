@@ -8,6 +8,10 @@ body {
 	background-color: #161616;
 }
 
+.completed {
+	display: none;
+}
+
 .hide {
 	display: none;
 }
@@ -163,10 +167,6 @@ button:focus {
 	outline: none;
 }
 
-.completed {
-	display: none;
-}
-
 .todo-items-completed {
 	display: flex;
 	flex-direction: column;
@@ -237,6 +237,7 @@ button:focus {
 .todo-items-completed::-webkit-scrollbar {
 	display: none;
 }
+
 .todo-description-completed {
 	color: #5b5b5b;
 	font-size: 13px;

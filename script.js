@@ -3,8 +3,11 @@
 let counter = 0
 let counterCompleted = 0
 
+const inputField = document.getElementById('newToDo')
+const description = document.querySelector('.todo-description')
+const descriptionCompleted = document.querySelector('.todo-description-completed')
+
 function handleKeyPress(event) {
-	const inputField = document.getElementById('newToDo')
 	if (event.key === 'Enter') {
 		let inputInfo = inputField.value
 		inputField.value = ''
@@ -45,8 +48,6 @@ function addToDoItem(inputInfo) {
 		})
 
 		itemsCounter(counter)
-		hideDescription()
-		
 	} else {
 		console.log('empty')
 	}
@@ -64,15 +65,9 @@ function deleteToDoItem(labelInput, listInput) {
 		counter--
 		if (counter < 0) counter = 0
 		itemsCounter()
-		if (counter === 0) {
-			showDescription()
-		}
 	}
 
 	itemsCounter()
-	if (counter === 0) {
-		showDescription()
-	}
 }
 
 function itemsCounter() {
@@ -88,8 +83,7 @@ function itemsCounter() {
 		infoTodo.append(itemsCount)
 	}
 
-	const description = document.querySelector('.todo-description')
-	if(counter > 0) {
+	if (counter > 0) {
 		description.classList.add('hide')
 	} else {
 		description.classList.remove('hide')
@@ -109,8 +103,7 @@ function itemsCounterCompleted() {
 		infoTodoCompleted.append(itemsCountCompleted)
 	}
 
-	const descriptionCompleted = document.querySelector('.todo-description-completed')
-	if(counterCompleted > 0) {
+	if (counterCompleted > 0) {
 		descriptionCompleted.classList.add('hide')
 	} else {
 		descriptionCompleted.classList.remove('hide')
@@ -120,23 +113,8 @@ function itemsCounterCompleted() {
 itemsCounter()
 itemsCounterCompleted()
 
-const description = document.querySelector('.todo-description')
-
-function hideDescription() {
-	if (counter > 0) {
-		description.classList.add('hide')
-	}
-}
-
-function showDescription() {
-	if (counter === 0) {
-		description.classList.remove('hide')
-	}
-}
-
 function buttonAdd() {
 	const button = document.getElementById('addToDo')
-	const inputField = document.getElementById('newToDo')
 	button.addEventListener('click', () => {
 		if (inputField.value.trim() !== '') {
 			let inputInfo = inputField.value
