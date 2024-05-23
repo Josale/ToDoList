@@ -161,7 +161,7 @@ function toggleCompletion(event) {
 		label.classList.remove('completed')
 	}
 	addToCompleted(label)
-}
+}//
 
 function setupCheckboxListeners() {
 	document.querySelectorAll('.input-checkbox').forEach(checkbox => {

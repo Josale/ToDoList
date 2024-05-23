@@ -6,6 +6,10 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #161616;
+	-webkit-user-select: none;
+  -moz-user-select: none;   
+  -ms-user-select: none;
+	user-select: none;
 }
 
 .completed {
@@ -243,4 +247,6 @@ button:focus {
 	font-size: 13px;
 	opacity: 80%;
 	text-align: center;
+	margin-top: 15px;
 }
+
