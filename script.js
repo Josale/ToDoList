@@ -178,6 +178,8 @@ function setupCheckboxListeners() {
     });
 }
 
+// Local Storage
+
 function saveToDoItems() {
     const todoItems = document.querySelectorAll('.todo-items .input-label');
     const completedItems = document.querySelectorAll('.todo-items-completed .input-label');
