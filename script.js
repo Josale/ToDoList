@@ -3,16 +3,20 @@
 let counter = 0;
 let counterCompleted = 0;
 
+
+// DOM Elements
 const inputField = document.getElementById('newToDo');
 const description = document.querySelector('.todo-description');
 const descriptionCompleted = document.querySelector('.todo-description-completed');
 
+// Loading some of functions
 window.addEventListener('load', () => {
     loadToDoItems();
     itemsCounter();
     itemsCounterCompleted();
 });
 
+// This function accepts InputField values and resets them after pressing Enter
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
         let inputInfo = inputField.value;
